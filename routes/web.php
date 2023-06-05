@@ -15,6 +15,7 @@ Route::get('/admin', [PlanController::class, 'index'])->name('admin.index');//ne
 Route::get('/admin/plans/{url}', [PlanController::class, 'show'])->name('plans.show');//new sintax
 Route::get('/admin/plans/{url}/edit', [PlanController::class, 'edit'])->name('plans.edit');//new sintax
 Route::delete('/admin/plans/{id}', [PlanController::class, 'destroy'])->name('plans.destroy');//new sintax
+Route::put('/admin/plans/{id}', [PlanController::class, 'update'])->name('plans.update');//new sintax
 
 Route::get('/', function () {
     return view('welcome');
