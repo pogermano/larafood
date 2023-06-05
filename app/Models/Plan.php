@@ -15,4 +15,24 @@ class Plan extends Model
         'price',
         'description'
     ];
+
+ /*    public function search($filter = null)
+    {
+        $results = $this->where('name', 'LIKE', "%{{$filter}}%")
+                        ->orWhere('description', 'LIKE', "%{$filter}%")
+                        ->paginate();
+
+        return $results;
+    }
+ */
+    public static function search($filter = null)
+    {
+
+
+        $results = Plan::where('name', 'LIKE', "%{$filter}%")
+                        ->orWhere('description', 'LIKE', "%{$filter}%")
+                        ->paginate(1);
+        return $results;
+    }
+
 }
